@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as NavRouter, Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar'; 
+import LandingPage from './components/LandingPage'; 
+import UpcyclingPage from './components/UpcyclingPage'; 
+import MindfulnessPage from './components/MindfulnessPage'; 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <header className="App-header">
+          <NavRouter>
+            <NavBar />
+            <section className="main-content">
+              <Routes>
+                <Route exact path="/" element={<LandingPage />} />
+                <Route exact path="/Upcycling" element={<UpcyclingPage />} />
+                <Route exact path="/Mindfulness" element={<MindfulnessPage />} />
+              </Routes>
+            </section>
+          </NavRouter>
+        </header>
     </div>
   );
 }
