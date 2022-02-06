@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import LandingPage from './components/LandingPage'; 
 import UpcyclingPage from './components/UpcyclingPage'; 
 import MindfulnessPage from './components/MindfulnessPage'; 
+import NewPost from './components/NewPost'; 
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
                 <Route exact path="/" element={<LandingPage />} />
                 <Route exact path="/Upcycling" element={<UpcyclingPage />} />
                 <Route exact path="/Mindfulness" element={<MindfulnessPage />} />
+                <Route exact path="/new-post" element={<NewPost />} />
               </Routes>
             </section>
           </NavRouter>
